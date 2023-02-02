@@ -15,7 +15,7 @@ let linkItemMenuRegionFilter = document.querySelectorAll(".header__filter > .dro
 let headingRegionFilter = document.querySelector(".dropdown > a.btn");
 let linkItemMenuYearFilter = document.querySelectorAll(".header__filter > .filter__year > ul > li > a");
 let linkItemMenuModeFilter = document.querySelectorAll(".header__filter > .filter__mode > ul > li > a");
-let linkItemMenuFuelFilter = document.querySelectorAll(".page-slid__filter > ul > li > a");
+let linkItemMenuFuelFilter = document.querySelectorAll(".header__filter > .filter__fuel > ul > li > a");
 let linkItemInfoblockSelector = document.querySelectorAll(".infoblock__selector > ul > li > a");
 
 function addingClassNameLink(links, heading) {

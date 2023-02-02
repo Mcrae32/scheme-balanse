@@ -1,9 +1,12 @@
-//header   
+//header  
+.header {
+    top: 0;
+    z-index: 100;
+}
+
 .page-slid__header {
     background-color: #fff;
     position: sticky;
-    top: 0;
-    z-index: 100;
 }
 
 
@@ -322,7 +325,9 @@
     }
 }
 .slide-menu__heading {
-    padding-left: 36px;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 36px;
     padding-top: 34px;
 }
 .slide-menu__hide {
@@ -370,5 +375,7 @@
 }
 
 .header__subheader {
+    background-color: #fff;
+    padding: 6px 0 4px;
     @extend %tpl_box-shadow;
 }

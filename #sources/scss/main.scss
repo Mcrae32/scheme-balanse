@@ -111,8 +111,10 @@ body {
 }
 
 .page-slid__header {
-    margin-bottom: 8px;
-    @extend %tpl_box-shadow;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.05);
+    // .page-header__container > div {
+    //     border-bottom: 2px solid #dee2e6;
+    // }
 }
 
 .first-slid__header-menu,
@@ -271,12 +273,12 @@ body {
 
 .scheme {
     overflow: auto;
+    margin-top: -20px;
     @media (min-width: 1760px) {
         display: flex;
         justify-content: center;
         position: relative;
         z-index: 0;
-        margin-top: -52px;
     }
 }
 
