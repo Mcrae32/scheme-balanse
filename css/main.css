@@ -21,7 +21,7 @@
   transition-duration: 0.3s;
 }
 
-.header__subheader {
+.ui-tooltip, .header__subheader {
   box-shadow: 0px 3px 9px 0px rgba(50, 50, 50, 0.2);
 }
 
@@ -103,11 +103,11 @@ h1, h2, h3, h4, h5, h6 {
 .header {
   top: 0;
   z-index: 100;
+  position: sticky;
 }
 
 .page-slid__header {
   background-color: #fff;
-  position: sticky;
 }
 
 .header__row {
@@ -409,7 +409,7 @@ h1, h2, h3, h4, h5, h6 {
   transform: translate(0%, 0);
 }
 .slide-menu_right .slide-menu__heading {
-  padding-top: 96px;
+  padding-top: 100px;
 }
 
 .slide-menu__heading {
@@ -430,9 +430,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .slide-menu__menu,
 .infoblock {
-  padding-left: 40px;
-  padding-right: 40px;
-  padding-top: 15px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.infoblock__header {
+  margin-bottom: 4px;
 }
 
 .menu__list {
@@ -740,10 +743,6 @@ body {
   text-decoration: underline;
 }
 
-.infoblock__header {
-  margin-bottom: 32px;
-}
-
 .infoblock__table .table tr th {
   font-weight: 300;
   font-size: 15px;
@@ -790,4 +789,5 @@ body {
 .ui-tooltip {
   max-width: 300px;
   white-space: pre-wrap;
+  line-height: 1.2rem;
 }
