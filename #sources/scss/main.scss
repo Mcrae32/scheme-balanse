@@ -21,6 +21,17 @@
     font-weight: 300;
 }
 
+@font-face {
+	font-family: 'Bebas Neue';
+	src: url('../fonts/BebasNeue/BebasNeueBold.eot');
+	src: local('../fonts/BebasNeue/Bebas Neue Bold'), local('BebasNeueBold'),
+		url('../fonts/BebasNeue/BebasNeueBold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/BebasNeue/BebasNeueBold.woff') format('woff'),
+		url('../fonts/BebasNeue/BebasNeueBold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
 //templates
 %tplrow {
     display: flex;
@@ -299,7 +310,8 @@ body {
         line-height: 32px;
         color: #232c77;
         text-transform: uppercase;
-
+        // padding-left: 0.5rem;
+        // padding-right: 0.5rem;
         h3 {
             margin: 0;
         }
