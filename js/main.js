@@ -11,6 +11,8 @@ $( function() {
 } );
 
 //header filter block
+let topBarId = '1'
+let topBarYear = '2019'
 let linkItemMenuRegionFilter = document.querySelectorAll(".header__filter > .dropdown > .dropdown-menu > li > a");
 let headingRegionFilter = document.querySelector(".dropdown > a.btn");
 let linkItemMenuYearFilter = document.querySelectorAll(".header__filter > .filter__year > ul > li > a");
@@ -27,7 +29,10 @@ function addingClassNameLink(links, heading) {
             }
             this.classList.add("active")
             let newHeading = this.parentNode.textContent;
-            heading.innerText = newHeading;
+            if (typeof heading !== 'undefined') {
+                heading.innerText = newHeading;
+            }
+            selectedTopBarContent(links[i])
         })
     }
 }
@@ -60,6 +65,7 @@ closeDropMenu(linkItemMenuRegionFilter, dropDownMenu);
 
 
 //heading menu
+
 let buttonMenu = document.querySelector("button.header__menu-button");
 let buttonMenuClose = document.querySelector(".slide-menu_left button.slide-menu__hide");
 let headingMenu = document.querySelector(".slide-menu_left");
@@ -99,4 +105,22 @@ visibleMenu(buttonMenu, slideInfoBlock);
 
 hideMenu(buttonInfoBlockClose, slideInfoBlock);
 
+//*** show ifo block ***
+//resources raw
+// let resourcesRawOil = document.querySelector(".resources__raw-oil");
+// let resourcesPetroleumGaz = document.querySelector(".resources__petroleum-gas");
 
+visibleMenu(buttonMenu, slideInfoBlock);
+// visibleMenu(resourcesPetroleumGaz, slideInfoBlock);
+
+hideMenu(buttonInfoBlockClose, slideInfoBlock);
+
+//change top bar
+function selectedTopBarContent(selected) {
+    topBarId = typeof selected.id === 'string' && selected.id !== '' ? selected.id : topBarId;
+    topBarYear = selected.getAttribute('year') !== null ? selected.getAttribute('year') : topBarYear;
+
+    console.log('id = ', topBarId, topBarYear)
+    getLines(topBarId, topBarYear)
+    getClouds(topBarId, topBarYear)
+}
