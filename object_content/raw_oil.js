@@ -12,7 +12,7 @@ var oil_production_chart = {
     data: [
         {
             name: 'Имя колонки 2018',
-            y: 210,
+            y: 200,
         },
         {
             name: 'Имя колонки 2019',
@@ -44,7 +44,6 @@ const chart = Highcharts.chart('container', {
         text: '',
         align: 'left'
     },
-
     xAxis: {
         categories: oil_prod_chart.xAxis,
         labels: {
@@ -83,7 +82,7 @@ const chart = Highcharts.chart('container', {
                 allowOverlap: true,
 
                 style: {
-                    fontSize: '13px',
+                    fontSize: '113px',
                     fontFamily: 'din-pro-light',
                     fontWeight: '400',
 
@@ -112,7 +111,32 @@ const chart = Highcharts.chart('container', {
         '#9892a9',
         '#232c77',
         '#e3d0c7'
+    ],
+    responsive: {
+        rules: [
+            {
+                condition: {
+                    maxWidth: 375
+                },
+                chartOptions: {
+                    xAxis: {
+                        labels: {
+                            style: {
+                                fontSize: '11px',
+                            }
+                        }
+                    },
+                    yAxis: {
+                        labels: {
+                            style: {
+                                fontSize: '11px',
+                            }
+                        }
+                    }
+                }
+            }
         ]
+    }
 });
 
 

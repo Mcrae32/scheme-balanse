@@ -70,8 +70,6 @@
 
     h1 {
         font-weight: 400;
-        text-align: center;
-
         @media (max-width: 767px) {
             margin-bottom: 0px;
             font-size: 14px;
@@ -376,6 +374,9 @@
     justify-content: flex-end;
     padding-right: 36px;
     padding-top: 34px;
+    @media (max-width: 1199px) {
+        padding-right: 15px;
+    }
 }
 
 .slide-menu__hide {
@@ -392,6 +393,10 @@
 .infoblock {
     padding-left: 30px;
     padding-right: 30px;
+    @media (max-width: 1199px) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
 }
 
 .infoblock__header {
@@ -417,7 +422,7 @@
             color: rgb(40, 40, 40);
             text-decoration: none;
             font-style: 16px;
-            line-height: 21px;
+            line-height: 18px;
             @extend %tpl_transition;
 
             &:hover,

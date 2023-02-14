@@ -168,7 +168,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 .header__title h1 {
   font-weight: 400;
-  text-align: center;
 }
 @media (max-width: 767px) {
   .header__title h1 {
@@ -425,6 +424,11 @@ h1, h2, h3, h4, h5, h6 {
   padding-right: 36px;
   padding-top: 34px;
 }
+@media (max-width: 1199px) {
+  .slide-menu__heading {
+    padding-right: 15px;
+  }
+}
 
 .slide-menu__hide {
   align-items: center;
@@ -439,6 +443,13 @@ h1, h2, h3, h4, h5, h6 {
 .infoblock {
   padding-left: 30px;
   padding-right: 30px;
+}
+@media (max-width: 1199px) {
+  .slide-menu__menu,
+.infoblock {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 .infoblock__header {
@@ -464,7 +475,7 @@ h1, h2, h3, h4, h5, h6 {
   color: rgb(40, 40, 40);
   text-decoration: none;
   font-style: 16px;
-  line-height: 21px;
+  line-height: 18px;
 }
 .menu__list li a:hover, .menu__list li a:focus {
   transform: scale(1) translate(5%);
@@ -717,11 +728,23 @@ body {
 .infoblock .infoblock__title h3 {
   margin: 0;
 }
+@media (max-width: 1399px) {
+  .infoblock .infoblock__title h3 {
+    font-size: 20px;
+  }
+}
+@media (max-width: 1099px) {
+  .infoblock .infoblock__title h3 {
+    font-size: 16px;
+    padding-top: 3px;
+  }
+}
 .infoblock .infoblock__selector {
   display: flex;
   height: 100%;
   align-items: flex-end;
   border-bottom: none;
+  justify-content: flex-end;
 }
 .infoblock .infoblock__selector ul.selector {
   display: flex;
@@ -749,6 +772,11 @@ body {
 .infoblock .infoblock__selector ul.selector li a.active {
   text-decoration: underline;
 }
+@media (max-width: 1399px) {
+  .infoblock .infoblock__selector ul.selector li a {
+    font-size: 12px;
+  }
+}
 
 .infoblock__table .table tr th {
   font-weight: 300;
@@ -762,6 +790,11 @@ body {
   text-align: left;
   max-width: 100px;
 }
+@media (max-width: 1199px) {
+  .infoblock__table .table tr th {
+    font-size: 12px;
+  }
+}
 .infoblock__table .table tr td {
   font-weight: 300;
   font-size: 15px;
@@ -769,10 +802,16 @@ body {
   text-align: center;
   color: #222;
   padding: 0.9rem 0.5rem;
+  hyphens: auto;
 }
 .infoblock__table .table tr td:first-child {
   text-align: left;
   max-width: 100px;
+}
+@media (max-width: 1199px) {
+  .infoblock__table .table tr td {
+    font-size: 12px;
+  }
 }
 
 .scheme__block {
