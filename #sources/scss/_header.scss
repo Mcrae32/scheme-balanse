@@ -3,6 +3,7 @@
     top: 0;
     z-index: 100;
     position: sticky;
+    background-color: white;
 }
 
 .page-slid__header {
@@ -39,10 +40,8 @@
     a {
         color: #FEB633;
         text-decoration: underline;
-
         &:hover,
         &:focus {}
-
         &:active {}
     }
 }
@@ -399,6 +398,14 @@
     }
 }
 
+.infoblock {
+
+    .tab-content {
+        max-height: calc(100vh - 150px);
+        overflow: auto;
+    }
+}
+
 .infoblock__header {
     margin-bottom: 4px;
 }
@@ -436,6 +443,6 @@
 
 .header__subheader {
     background-color: #fff;
-    padding: 6px 0 4px;
-    @extend %tpl_box-shadow;
+    padding: 2px 0 4px;
+    box-shadow: 4px 4px rgba(0, 0, 0, 0.05);
 }

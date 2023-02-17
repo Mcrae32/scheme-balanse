@@ -65,25 +65,25 @@ closeDropMenu(linkItemMenuRegionFilter, dropDownMenu);
 
 
 //heading menu
-
 let buttonMenu = document.querySelector("button.header__menu-button");
 let buttonMenuClose = document.querySelector(".slide-menu_left button.slide-menu__hide");
 let headingMenu = document.querySelector(".slide-menu_left");
+
 //slide info block
 let slideInfoBlock = document.querySelector(".slide-menu_right");
 let buttonInfoBlockClose = document.querySelector(".slide-menu_right button.slide-menu__hide");
 
 function visibleMenu(button, menu){
-    button.addEventListener("click", function(event) {
-        event.preventDefault();
+    button.addEventListener("click", function() {
         menu.classList.remove("hidden");
         menu.classList.add("show");
+
+        createHighcharts();
     });
 }
 
 function hideMenu(button, menu){
-    button.addEventListener("click", function(event) {
-        event.preventDefault();
+    button.addEventListener("click", function() {
         menu.classList.remove("show");
         menu.classList.add("hidden");
     });
@@ -92,29 +92,45 @@ function hideMenu(button, menu){
 visibleMenu(buttonMenu, headingMenu);
 hideMenu(buttonMenuClose, headingMenu);
 
+//*** show info block ***
+let schemeBlocks = document.querySelectorAll(".scheme__block");
+let scheme = document.querySelector(".scheme")
 
-//*** show ifo block ***
-//resources raw
-let resourcesRawOil = document.querySelector(".resources__raw-oil");
-let resourcesPetroleumGaz = document.querySelector(".resources__petroleum-gas");
+function informingSchemeBlocks(blocks, slidInfoBlock, closeButton) {
+    for (let i = 0; i < blocks.length; i++) {
+        blocks[i].addEventListener("click", function() {
+            for (let j = 0; j < blocks.length; j++) {
+                blocks[j].classList.remove("active")
+            }
+            this.classList.add("active")
+        })
+        
+        visibleMenu(blocks[i], slidInfoBlock)
 
+        closeButton.addEventListener("click", function() {
+            for (let j = 0; j < blocks.length; j++) {
+                blocks[j].classList.remove("active")
+            }
+            slidInfoBlock.classList.remove("show")
+            slidInfoBlock.classList.add("hidden")
+        })
+    }
 
+    window.addEventListener('click', e => {
+        const target = e.target
+        console.log(target)
+        if (!target.closest('.slide-menu_right') && !target.closest('.scheme__block')) {
+            for (let j = 0; j < blocks.length; j++) {
+                blocks[j].classList.remove("active")
+            }
+            slidInfoBlock.classList.remove("show")
+            slidInfoBlock.classList.add("hidden")
+        }
+    })
+}
 
-visibleMenu(buttonMenu, slideInfoBlock);
-// visibleMenu(resourcesPetroleumGaz, slideInfoBlock);
-
-hideMenu(buttonInfoBlockClose, slideInfoBlock);
-
-//*** show ifo block ***
-//resources raw
-// let resourcesRawOil = document.querySelector(".resources__raw-oil");
-// let resourcesPetroleumGaz = document.querySelector(".resources__petroleum-gas");
-
-visibleMenu(buttonMenu, slideInfoBlock);
-// visibleMenu(resourcesPetroleumGaz, slideInfoBlock);
-
-hideMenu(buttonInfoBlockClose, slideInfoBlock);
-
+informingSchemeBlocks(schemeBlocks, slideInfoBlock, buttonInfoBlockClose);
+  
 //change top bar
 function selectedTopBarContent(selected) {
     topBarId = typeof selected.id === 'string' && selected.id !== '' ? selected.id : topBarId;
