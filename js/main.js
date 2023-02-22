@@ -139,4 +139,5 @@ function selectedTopBarContent(selected) {
     console.log('id = ', topBarId, topBarYear)
     getLines(topBarId, topBarYear)
     getClouds(topBarId, topBarYear)
+    getArrows(topBarId, topBarYear)
 }
