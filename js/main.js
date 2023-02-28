@@ -95,6 +95,7 @@ hideMenu(buttonMenuClose, headingMenu);
 //*** show info block ***
 let schemeBlocks = document.querySelectorAll(".scheme__block");
 let scheme = document.querySelector(".scheme")
+let containerScheme = document.querySelector(".page-slid__container");
 
 function informingSchemeBlocks(blocks, slidInfoBlock, closeButton) {
     for (let i = 0; i < blocks.length; i++) {
@@ -103,6 +104,12 @@ function informingSchemeBlocks(blocks, slidInfoBlock, closeButton) {
                 blocks[j].classList.remove("active")
             }
             this.classList.add("active")
+            containerScheme.classList.add("active")
+            this.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+                inline: 'center'
+            });
         })
         
         visibleMenu(blocks[i], slidInfoBlock)
@@ -113,6 +120,7 @@ function informingSchemeBlocks(blocks, slidInfoBlock, closeButton) {
             }
             slidInfoBlock.classList.remove("show")
             slidInfoBlock.classList.add("hidden")
+            containerScheme.classList.remove("active")
         })
     }
 
@@ -125,12 +133,13 @@ function informingSchemeBlocks(blocks, slidInfoBlock, closeButton) {
             }
             slidInfoBlock.classList.remove("show")
             slidInfoBlock.classList.add("hidden")
+            containerScheme.classList.remove("active")
         }
     })
 }
 
 informingSchemeBlocks(schemeBlocks, slideInfoBlock, buttonInfoBlockClose);
-  
+
 //change top bar
 function selectedTopBarContent(selected) {
     topBarId = typeof selected.id === 'string' && selected.id !== '' ? selected.id : topBarId;
